@@ -80,7 +80,7 @@ function selectWristSize(size) {
         if (size === elemnt) {
             button.classList.add("border-purple-600");
         } else {
-            button.classList.remove("border-purple-600");
+            button.classList.replace("border-purple-600", "border-gray-300");
         }
     }
 }
@@ -107,3 +107,82 @@ document.querySelectorAll(".quantity-button").forEach(btn => {
         document.getElementById("quantity").innerText = currentQuantity;  // Update the DOM
     });
 });
+
+
+// Add to Cart
+
+let cartCount = 0;
+let cartItems = [];
+document.getElementById("add-to-cart").addEventListener("click", function () {
+    const quantity = parseInt(document.getElementById("quantity").innerText);
+    if (quantity > 0) {
+        document.getElementById("checkout-container").classList.remove("hidden");
+        cartCount += quantity;
+        document.getElementById("cart-count").innerText = cartCount;
+
+        const selectedColorBtn = document.querySelector("button.border-purple-600.w-6");
+        const selectedColor = selectedColorBtn ? selectedColorBtn.id.split("-")[0] : "purple";
+
+        const selectedSizeBtn = document.querySelector("button.border-purple-600:not(.w-6)");
+        const selectedSize = selectedSizeBtn ? selectedSizeBtn.innerText.split(" ")[0] : "S";
+
+        const selectedPrice = selectedSizeBtn.innerText.split(" ")[1].split("$")[1];
+
+        cartItems.push({
+            image: selectedColor + ".png",
+            title: "Classy Modern Smart Watch",
+            color: selectedColor,
+            size: selectedSize,
+            quantity: quantity,
+            price: quantity * parseInt(selectedPrice),
+        });
+
+    } else {
+        alert("Please select a quantity!");
+    }
+
+});
+
+
+// Checkout & Cart Preview
+
+document.getElementById("checkout-btn").addEventListener("click", function () {
+
+    const cartConatainer = document.getElementById("cart-items");
+    const totalPriceElement = document.getElementById("total-price");
+    let totalPrice = 0;
+    cartConatainer.innerHTML = "";
+
+
+    for (let i = 0; i < cartItems.length; i++) {
+        const item = cartItems[i];
+        const row = document.createElement("tr");
+        row.classList.add("border-b");
+        row.innerHTML = `
+        <td class="py-2 px-4">
+            <div class="flex items-center space-x-2">
+                <img class="h-12 w-12 object-cover rounded-md" src="${productImageBase}${item.image}" alt="">
+                <span class="font-semibold">${item.title}</span>
+            </div>
+        </td>
+        <td class="py-2 px-4">${item.color}</td>
+        <td class="py-2 px-4">${item.size}</td>
+        <td class="py-2 px-4">${item.quantity}</td>
+        <td class="py-2 px-4">$${item.price}</td>
+        `;
+        cartConatainer.appendChild(row);
+        totalPrice += item.price;
+
+        totalPriceElement.innerText = "$" + totalPrice;
+
+    }
+
+    const cartModal = document.getElementById("cart-modal");
+    cartModal.classList.remove("hidden");
+
+});
+
+document.getElementById("continue-shopping").addEventListener("click", function () {
+    document.getElementById("cart-modal").classList.add("hidden");
+});
+
