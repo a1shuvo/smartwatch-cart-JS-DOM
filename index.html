@@ -51,13 +51,13 @@
           <div class="mt-4">
             <span class="text-sm font-semibold text-gray-700">Band Color</span>
             <div class="flex items-center mt-1 space-x-2 brand-color-container">
-              <button class="w-6 h-6 rounded-full bg-purple-500 border-2 border-purple-600 ring-button"
+              <button class="w-6 h-6 rounded-full bg-purple-500 border-2 border-purple-600 ring-button cursor-pointer"
                 id="purple-color"></button>
-              <button class="w-6 h-6 rounded-full bg-teal-500 border-2 border-gray-300 ring-button"
+              <button class="w-6 h-6 rounded-full bg-teal-500 border-2 border-gray-300 ring-button cursor-pointer"
                 id="teal-color"></button>
-              <button class="w-6 h-6 rounded-full bg-cyan-500 border-2 border-gray-300 ring-button"
+              <button class="w-6 h-6 rounded-full bg-cyan-500 border-2 border-gray-300 ring-button cursor-pointer"
                 id="cyan-color"></button>
-              <button class="w-6 h-6 rounded-full bg-gray-700 border-2 border-gray-300 ring-button"
+              <button class="w-6 h-6 rounded-full bg-gray-700 border-2 border-gray-300 ring-button cursor-pointer"
                 id="gray-color"></button>
             </div>
           </div>
@@ -66,19 +66,19 @@
             <span class="text-sm font-semibold text-gray-700">Wrist Size</span>
             <div class="grid grid-cols-4 gap-2 mt-2">
               <button onclick="selectWristSize('S')"
-                class="px-4 py-2 border border-purple-600 rounded-lg text-sm hover:bg-gray-100" id="size-S">
+                class="px-4 py-2 border border-purple-600 rounded-lg text-sm hover:bg-gray-100 cursor-pointer" id="size-S">
                 S $69
               </button>
               <button onclick="selectWristSize('M')"
-                class="px-4 py-2 border border-gray-300 rounded-lg text-sm hover:bg-gray-100" id="size-M">
+                class="px-4 py-2 border border-gray-300 rounded-lg text-sm hover:bg-gray-100 cursor-pointer" id="size-M">
                 M $79
               </button>
               <button onclick="selectWristSize('L')"
-                class="px-4 py-2 border border-gray-300 rounded-lg text-sm hover:bg-gray-100" id="size-L">
+                class="px-4 py-2 border border-gray-300 rounded-lg text-sm hover:bg-gray-100 cursor-pointer" id="size-L">
                 L $89
               </button>
               <button onclick="selectWristSize('XL')"
-                class="px-4 py-2 border border-gray-300 rounded-lg text-sm hover:bg-gray-100" id="size-XL">
+                class="px-4 py-2 border border-gray-300 rounded-lg text-sm hover:bg-gray-100 cursor-pointer" id="size-XL">
                 XL $99
               </button>
             </div>
@@ -87,16 +87,16 @@
           <!-- Quantity & Add to Cart -->
           <div class="mt-6 flex flex-wrap items-center space-x-4">
             <div class="flex items-center border border-gray-300 rounded-lg">
-              <button class="px-4 py-2 text-gray-600 hover:text-gray-800 quantity-button">
+              <button class="px-4 py-2 text-gray-600 hover:text-gray-800 quantity-button cursor-pointer">
                 -
               </button>
               <span id="quantity" class="px-4">0</span>
-              <button class="px-4 py-2 text-gray-600 hover:text-gray-800 quantity-button">
+              <button class="px-4 py-2 text-gray-600 hover:text-gray-800 quantity-button cursor-pointer">
                 +
               </button>
             </div>
             <div class="flex items-center space-x-2">
-              <button class="px-6 py-3 bg-purple-600 text-white rounded-lg shadow-lg hover:bg-purple-700"
+              <button class="px-6 py-3 bg-purple-600 text-white rounded-lg shadow-lg hover:bg-purple-700 cursor-pointer"
                 id="add-to-cart">
                 Add to Cart
               </button>
@@ -112,7 +112,7 @@
       <!-- Checkout Button Container (Centered Below Image & Text) -->
       <div id="checkout-container" class="mt-6 flex justify-center w-full hidden">
         <button id="checkout-btn"
-          class="px-6 py-2 bg-orange-400 text-white rounded-3xl shadow-lg hover:bg-orange-500 flex items-center">
+          class="px-6 py-2 bg-orange-400 text-white rounded-3xl shadow-lg hover:bg-orange-500 flex items-center cursor-pointer">
           Checkout
           <span
             class="ml-2 bg-white text-orange-500 rounded-lg w-6 h-6 flex items-center justify-center text-xs font-bold"
@@ -155,10 +155,10 @@
 
       <!-- Buttons -->
       <div class="flex justify-end gap-2 mt-4">
-        <button id="continue-shopping" class="px-6 py-2 bg-gray-300 text-gray-800 rounded-lg hover:bg-gray-400">
+        <button id="continue-shopping" class="px-6 py-2 bg-gray-300 text-gray-800 rounded-lg hover:bg-gray-400 cursor-pointer">
           Continue Shopping
         </button>
-        <button class="px-6 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700" id="checkout">
+        <button class="px-6 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 cursor-pointer" id="checkout">
           Checkout
         </button>
       </div>

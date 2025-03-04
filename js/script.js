@@ -1,7 +1,7 @@
 /* Using nested for loops  */
 
 // const brandColorBtns = document.querySelectorAll(".ring-button");
-// let productImageBase = "../images/";
+// let productImageBase = "./images/";
 
 // for (let i = 0; i < brandColorBtns.length; i++) {
 //     const colorBtn = brandColorBtns[i];
@@ -26,7 +26,7 @@
 /* Using Nested forEach Loop */
 
 // const brandColorBtns = document.querySelectorAll(".ring-button");
-// let productImageBase = "../images/";
+// let productImageBase = "./images/";
 
 // brandColorBtns.forEach(ColorBtn => {
 //     ColorBtn.addEventListener("click", function (event) {
@@ -47,7 +47,7 @@
 
 /* Using Event Delegation */
 
-const productImageBase = "../images/";
+const productImageBase = "./images/";
 const container = document.querySelector(".brand-color-container"); // Assuming buttons are wrapped in a container
 
 container.addEventListener("click", (event) => {
@@ -185,4 +185,8 @@ document.getElementById("checkout-btn").addEventListener("click", function () {
 document.getElementById("continue-shopping").addEventListener("click", function () {
     document.getElementById("cart-modal").classList.add("hidden");
 });
+
+document.getElementById("checkout").addEventListener("click", function () {
+    alert("Processing for next Steps.....!");
+})
 
